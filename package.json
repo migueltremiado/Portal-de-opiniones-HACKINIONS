@@ -1,0 +1,30 @@
+{
+  "name": "proyecto-2",
+  "version": "1.0.0",
+  "description": "Proyecto BackEnd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proyectosaruiz/proyecto-2.git"
+  },
+  "author": "Miguel Alonso & Amilcar Ruiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/proyectosaruiz/proyecto-2/issues"
+  },
+  "homepage": "https://github.com/proyectosaruiz/proyecto-2#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "minimist": "^1.2.6",
+    "nodemon": "^2.0.15",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "prompt-sync": "^4.2.0",
+    "sharp": "^0.30.3"
+  }
+}
