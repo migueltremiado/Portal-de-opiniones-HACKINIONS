@@ -16,4 +16,11 @@ CREATE TABLE hackent(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+INSERT INTO usuarios (nombre, email) VALUES 
+("Carlos", "Lopez", "lopez0@google.com"), 
+("Maria", "Suarez", "suarez0@google.com"),
+("Carla","gimenez", "gimenez0@google.com"),
+("Mariana", "fonseca", "fonseca0@google.com"),
+("Jose", "Mijarez", "mijarez0@google.net");
+
 
