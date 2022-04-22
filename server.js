@@ -4,6 +4,9 @@ const Joi = require("@hapi/joi");
 //para ver ficheros
 const fileupload = require("express-fileupload");
 
+//Requerimos a user para hacer un get
+const listUsers = "./controllers/listUsers.js";
+
 //Declaramos  app
 const app = express();
 app.use(express.json());
