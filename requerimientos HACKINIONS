@@ -1,0 +1,139 @@
+Blog/foro
+
+1. Base de datos
+
+Tabla de usuarios
+- id
+- nombre de usuario *
+- email *
+- contraseña *
+- rol
+- activado
+- borrado
+- codigo de registro
+-
+- 
+
+Tabla de articulos
+- id
+- título *
+- contenido *
+- id del autor *
+
+
+
+OPCIONAL
+
+Tabla de votos de artículos
+- id
+- voto *
+- id del artículo *
+- id del usuario *
+- fecha de creación
+
+
+2. Endpoints
+
+- GET /entries
+-- Obtener un listado de todos los articulos
+-- Autenticación: no
+-- Query params:
+    - createdBefore: una fecha para filtrar los artículos creados antes de esa fecha
+    - createdAfter: una fecha para filtrar los articulos creados después de esa fecha
+    - author: filtro de autor de los artículos
+-- Retorna: información de todos los artículos
+
+
+
+- POST /entries
+-- Crear un artículo
+-- Autenticación: sí
+-- Body:
+    - title: título del artículo
+    - description: contenido del artículo
+-- Retorna: mensaje que indica si el artículo se ha creado correctamente y su URL
+
+
+-000000000- Path params:
+    0000000- idEntry: id del artíuclo
+   00000000 - idPhoto: id de la foto
+--00000000 Retorna: mensaje que indica si la foto se ha borrado correctamente
+
+
+OPCIONAL
+
+
+- POST /entries/:idEntry/votes
+-- Votar un artículo
+-- Autenticación: sí
+-- Path params:
+    - idEntry: id del artículo
+-- Body:
+    - vote: el voto
+-- Retorna: mensaje que indica si el voto se ha guardado correctamente
+
+
+
+
+- ?????POST /users
+-- ?????Crear un usuario pendiente de activación
+-- ?????utenticación: no
+--????? Body:
+    ?????- email: correo electrónico
+    -???? password: contraseña
+    -????? name: nombre del usuario
+--????? Retorna: mensaje que indica si el usuario se ha creado correctamente y que tiene que activarse
+
+- GET /users/validate/:registrationCode
+-- Validar un usuario pendiente de activación
+-- Autenticación: no
+-- Path params:
+    - registrationCode: código generado en el registro y enviado por email
+-- Retorna: mensaje que indica si el usuario se ha validado correctamente
+
+- POST /users/login
+-- Hacer login
+-- Autenticación: no
+-- Body:
+    - email: correo electrónico del usuario
+    - password: contraseña del usuario
+-- Retorna: un token (JWT - Json Web Token)
+
+- PUT /users/:idUser
+-- Editar el nombre y/o el email de un usuario
+-- Autenticación: sí
+    - necesitará ser el propio usuario o tener el rol de admin
+-- Path params:
+    - idUser: id del usuario a editar
+-- Body:
+    - email
+    - username
+-- Retorna: mensaje que indica si el usuario se ha modificado correctamente
+
+
+
+- PUT /users/:idUser/password
+-- Editar la contraseña de un usuario
+-- Autenticación: sí
+-- Path params:
+    - idUser: id del usuario
+-- Body:
+    - oldPassword: contraseña actual
+    - newPassword: contraseña nueva
+-- Retorna: mensaje que indica que la contraseña se ha modificado correctamente
+
+- ????POST/PUT /users/recover-password
+--????Enviar un correo con el código de recuperación de contraseña
+-- ???Autenticación: no
+-- ???Body:
+    ?????- email: correo electrónico del usuario
+-- ????Retorna: mensaje que indica que se ha enviado el correo de recuperación correctamente
+
+- ???PUT /users/reset-password
+-- ????Cambiar la contraseña de un usuario con el código de recuperación
+-- ????Autenticación: no
+-- ???Body:
+    ?????- recoverCode: código de recuperación
+    ?????- newPassword: contraseña nueva
+-- ????Retorna: mensaje que indica que se ha actualizado correctamente la contraseña
+
