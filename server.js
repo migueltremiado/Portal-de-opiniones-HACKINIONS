@@ -4,6 +4,8 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const listEntries = require("./controllers/hackentries/listEntries");
+const userLogin = require("./controllers/users/userLogin");
+const newUser = require("./controllers/users/newUser");
 //const Joi = require("@hapi/joi");
 //para ver ficheros
 //const fileupload = require("express-fileupload");
@@ -17,6 +19,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(morgan("dev"));
+app.use(express.json());
 
 //endpoint home
 
@@ -30,6 +33,14 @@ app.get("/", (req, res) => {
 //endPoint entries
 
 app.get("/hackentries", listEntries);
+
+//login
+
+app.post("/login", userLogin);
+
+//new user
+
+app.post("/newUser", newUser);
 
 //middleware de los errores
 

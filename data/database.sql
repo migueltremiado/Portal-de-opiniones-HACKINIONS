@@ -33,13 +33,14 @@ CREATE TABLE hackvotes(
 
 );
 
-INSERT INTO users (name,last_name, email, username, bio, password) VALUES 
-("Carlos", "Lopez", "lopez0@google.com", "C.lopez", "Soy Carlos y recojo patatas", SHA2("987654", 512)), 
-("Maria", "Suarez", "suarez0@google.com","A.suarez", "Soy Maria y estoy parada", SHA2("123456", 512)),
-("Carla","Jimenez", "jimenez0@google.com", "C.Jimenez", "Soy Jimenez con J", SHA2("987654", 512));
+
 
 
 INSERT INTO hackentries(title, content, user_id)
 	VALUES
-    ("precio del gas","El precio del gas esta carísimo, bla bla",2),
-    ("educación infantil", "Los padres de hoy dejan a los niños bla bla",3);
+    ("precio del gas","El precio del gas esta carísimo, bla bla",1),
+    ("educación infantil", "Los padres de hoy dejan a los niños bla bla",2);
+    
+
+    
+
