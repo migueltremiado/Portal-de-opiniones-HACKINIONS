@@ -6,12 +6,11 @@ const morgan = require("morgan");
 const listEntries = require("./controllers/hackentries/listEntries");
 const userLogin = require("./controllers/users/userLogin");
 const newUser = require("./controllers/users/newUser");
+const newVote = require("./controllers/hackentries/votes");
+const authUser = require("./middlewares/auth");
 //const Joi = require("@hapi/joi");
 //para ver ficheros
 //const fileupload = require("express-fileupload");
-
-//Requerimos a user para hacer un get
-const listUsers = "./controllers/listUsers.js";
 
 //Declaramos  app
 const app = express();
@@ -20,6 +19,9 @@ const port = process.env.PORT;
 
 app.use(morgan("dev"));
 app.use(express.json());
+
+//Requerimos a user para hacer un get
+const listUsers = "./controllers/listUsers.js";
 
 //endpoint home
 
@@ -42,6 +44,10 @@ app.post("/login", userLogin);
 
 app.post("/newUser", newUser);
 
+//votos
+
+// app.post("/hackentries/:idEntry/votes", authUser, newVote);
+app.post("/hackentries/:idEntry/votes", authUser, newVote);
 //middleware de los errores
 
 app.use((error, req, res, next) => {

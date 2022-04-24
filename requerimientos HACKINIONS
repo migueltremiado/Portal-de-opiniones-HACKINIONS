@@ -1,6 +1,6 @@
 Blog/foro
 
-1. Base de datos
+1. Base de datos     listo
 
 Tabla de usuarios
 - id
@@ -13,7 +13,7 @@ Tabla de usuarios
 -fecha de creación
 - 
 
-Tabla de articulos
+Tabla de articulos   listo
 - id
 - título *
 - contenido *
@@ -25,7 +25,7 @@ Tabla de articulos
 
 OPCIONAL
 
-Tabla de votos de artículos
+Tabla de votos de artículos          listo
 - id
 - voto *
 - id del artículo *
@@ -46,7 +46,7 @@ Tabla de votos de artículos
 
 
 
-- POST /hackentries
+- POST /hackentries   
 -- Crear un artículo
 -- Autenticación: sí
 -- Body:
@@ -54,7 +54,7 @@ Tabla de votos de artículos
     - description: contenido del artículo
 -- Retorna: mensaje que indica si el artículo se ha creado correctamente
 
-- POST /newUsers
+- POST /newUsers         listo
 -- Crear un usuario
 -- Autenticación: no
 -- Body:
@@ -67,7 +67,7 @@ Tabla de votos de artículos
 -- Retorna: mensaje que indica si el usuario se ha creado correctamente
 
 
-- POST /users/login
+- POST /users/login        listo
 -- Hacer login
 -- Autenticación: no
 -- Body:
@@ -101,10 +101,10 @@ Tabla de votos de artículos
 
 
 
-OPCIONAL
+OPCIONAL        in process
 
 
-- POST /entries/:idEntry/votes
+- POST /hackentries/:idEntry/votes
 -- Votar un artículo
 -- Autenticación: sí
 -- Path params:
