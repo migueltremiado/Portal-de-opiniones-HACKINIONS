@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0be1daeb-fd07-4767-83b0-bd3b60329775",
+		"_postman_id": "4fb5adc4-5ce4-4a5a-a267-de5d7f3ca31c",
 		"name": "HACKINIONS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -93,6 +93,40 @@
 					"port": "3000",
 					"path": [
 						"newUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newHackEntries",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwOTA5NTU3LCJleHAiOjE2NTM1MDE1NTd9.FV2FksU4JNBL8uAaDNwADVrg38AQea4tv7zmWhHUd5A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"DSFDgvhljñnm,bmvjgvhjhkjn,bmgjhjlkmn,mb vbhgjklmnbvfghhjc,hjhkjvcmgv,hjhkjj.khcjgkgjb\",\n    \"content\": \"vfaetaryesurdikjfhyrtseryfyhijbvcjfghkjbhjbjjjgggghsdgrgrgvggvtvragargarcgargargrcargrgragracegrhdhfddj\"\n   \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/hackentries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"hackentries"
 					]
 				}
 			},
