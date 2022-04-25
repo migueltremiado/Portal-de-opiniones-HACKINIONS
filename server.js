@@ -24,6 +24,7 @@ app.use(express.json());
 const listUsers = "./controllers/listUsers.js";
 
 //endpoint home
+//la que hacemos por defecto
 
 app.get("/", (req, res) => {
   res.status(200).send({

@@ -15,7 +15,7 @@ async function newUser(req, res, next) {
         400
       );
     }
-
+    //seleccioname y devuelveme si estan este email
     let [existingUser] = await connection.query(
       `
       SELECT id
@@ -41,6 +41,7 @@ async function newUser(req, res, next) {
     if (existingUser.length > 0) {
       throw generateError(`Ya existe un usuario con este username`, 409);
     }
+    //bcrypt nos permite encriptar los password
     const passwordHash = await bcrypt.hash(password, 8);
 
     await connection.query(
