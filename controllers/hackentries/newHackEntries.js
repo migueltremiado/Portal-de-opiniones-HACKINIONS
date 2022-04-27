@@ -5,7 +5,7 @@ async function newHackEntries(req, res, next) {
   let connection;
   try {
     const userId = req.userId;
-    //Tenemos los campos qyue necesitamos
+    //Tenemos los campos query necesitamos
     const { title, content } = req.body;
     if (!content || !title) {
       throw generateError("debes introducir un contenido y título", 400);
