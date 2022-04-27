@@ -8,6 +8,8 @@ const userLogin = require("./controllers/users/userLogin");
 const newUser = require("./controllers/users/newUser");
 const newVote = require("./controllers/hackentries/votes");
 const authUser = require("./middlewares/auth");
+const newHackEntries = require("./controllers/hackentries/newHackEntries");
+
 //const Joi = require("@hapi/joi");
 //para ver ficheros
 //const fileupload = require("express-fileupload");
@@ -24,6 +26,7 @@ app.use(express.json());
 const listUsers = "./controllers/listUsers.js";
 
 //endpoint home
+//la que hacemos por defecto
 
 app.get("/", (req, res) => {
   res.status(200).send({
@@ -43,6 +46,9 @@ app.post("/login", userLogin);
 //new user
 
 app.post("/newUser", newUser);
+
+//newHackEntries con su middleware autUsers
+app.post("/hackEntries", authUser, newHackEntries);
 
 //votos
 

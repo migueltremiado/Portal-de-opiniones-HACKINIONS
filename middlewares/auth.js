@@ -6,6 +6,7 @@ const authUser = (req, res, next) => {
     const { authorization } = req.headers;
 
     //Miramos se llega la cabecera de la autorización
+    //Comprobamos que es un token valido
 
     if (!authorization) {
       throw generateError("Falta la cabecera de la autorización", 401);
@@ -21,6 +22,8 @@ const authUser = (req, res, next) => {
 
     //Metemos la información del token en la request para usarla en el controlador
 
+    //Iguala el usuario con el token
+    //Avisa que ese usuario tiene esa encriptacion
     req.userId = token.id;
 
     //Saltamos al controlador

@@ -1,5 +1,5 @@
 //conexión a base de datos
-
+//es una libreria de como nodemon
 const mysql = require("mysql2/promise");
 
 const { MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE } = process.env;
