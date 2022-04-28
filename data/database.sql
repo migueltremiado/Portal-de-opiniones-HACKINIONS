@@ -36,7 +36,7 @@ CREATE TABLE hackvotes(
 
 
 
-INSERT INTO hackentries(title, content, user_id)
+INSEhackentriesRT INTO hackentries(title, content, user_id)
 	VALUES
     ("precio del gas","El precio del gas esta carísimo, bla bla",1),
     ("educación infantil", "Los padres de hoy dejan a los niños bla bla",2);
