@@ -9,6 +9,7 @@ const newUser = require("./controllers/users/newUser");
 const newVote = require("./controllers/hackentries/votes");
 const authUser = require("./middlewares/auth");
 const newHackEntries = require("./controllers/hackentries/newHackEntries");
+const changePassword = require("./controllers/users/changePassword");
 const changeHack = require("./controllers/users/changeHack"); //cambio 27.04 A.R
 
 //const Joi = require("@hapi/joi");
@@ -58,8 +59,12 @@ app.put("/changeHack", authUser, changeHack);
 
 // app.post("/hackentries/:idEntry/votes", authUser, newVote);
 app.post("/hackentries/:idEntry/votes", authUser, newVote);
-//middleware de los errores
 
+// changepass
+
+app.put("/changePassword", authUser, changePassword);
+
+//middleware de los errores
 app.use((error, req, res, next) => {
   res.status(error.httpStatus || 500).send({
     status: "error",
