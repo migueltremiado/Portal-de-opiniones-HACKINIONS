@@ -1,120 +1,4 @@
 {
-  "info": {
-    "_postman_id": "4fb5adc4-5ce4-4a5a-a267-de5d7f3ca31c",
-    "name": "HACKINIONS",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "home",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/as",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["as"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "hackentries",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/hackentries",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["hackentries"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "userLogin",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"email\": \"alonso@google.com\",\n    \"password\": \"123\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:3000/login",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["login"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "newUser",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"email\": \"alonso@google.com\",\n    \"password\": \"123\",\n    \"username\": \"mig\",\n    \"name\": \"miguel\",\n    \"lastname\":\"alonso\"\n    \n\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:3000/newUser",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["newUser"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "newHackEntries",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwOTA5NTU3LCJleHAiOjE2NTM1MDE1NTd9.FV2FksU4JNBL8uAaDNwADVrg38AQea4tv7zmWhHUd5A",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"title\": \"DSFDgvhljñnm,bmvjgvhjhkjn,bmgjhjlkmn,mb vbhgjklmnbvfghhjc,hjhkjvcmgv,hjhkjj.khcjgkgjb\",\n    \"content\": \"vfaetaryesurdikjfhyrtseryfyhijbvcjfghkjbhjbjjjgggghsdgrgrgvggvtvragargarcgargargrcargrgragracegrhdhfddj\"\n   \n    \n\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:3001/hackentries",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
-          "path": ["hackentries"]
-        }
-      },
-      "response": []
-    }
-  ]
-}
-=======
 	"info": {
 		"_postman_id": "5d4e5794-2294-4aff-8f7e-9c6ebaae2186",
 		"name": "HACKINIONS",
@@ -127,13 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/as",
+					"raw": "localhost:3000/",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"as"
+						""
 					]
 				}
 			},
@@ -162,10 +46,17 @@
 			"name": "userLogin",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwOTA5NTU3LCJleHAiOjE2NTM1MDE1NTd9.FV2FksU4JNBL8uAaDNwADVrg38AQea4tv7zmWhHUd5A",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"alonso@google.com\",\n    \"password\": \"123\"\n}",
+					"raw": "{\n    \"email\": \"amilcar@hatemale.com\",\n    \"password\": \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -193,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"alonso@google.com\",\n    \"password\": \"123\",\n    \"username\": \"mig\",\n    \"name\": \"miguel\",\n    \"lastname\":\"alonso\"\n    \n\n}",
+					"raw": "{\n    \"email\": \"amilcar@hatemale.com\",\n    \"password\": \"123\",\n    \"username\": \"amilca\",\n    \"name\": \"amilcar\",\n    \"lastname\":\"ruiz\"\n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -227,7 +118,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"DSFDgvhljñnm,bmvjgvhjhkjn,bmgjhjlkmn,mb vbhgjklmnbvfghhjc,hjhkjvcmgv,hjhkjj.khcjgkgjb\",\n    \"content\": \"vfaetaryesurdikjfhyrtseryfyhijbvcjfghkjbhjbjjjgggghsdgrgrgvggvtvragargarcgargargrcargrgragracegrhdhfddj\"\n   \n    \n\n}",
+					"raw": "{\n    \"title\": \"DSFDgvhljñnm\",\n    \"content\": \"vfaetaryesurdikjfhyrtseryfyhijbvcjfghkjbhjbjjjgggghsdgrgrgvggvtvragargarcgargargrcargrgragracegrhdhfddj\"\n   \n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -243,6 +134,42 @@
 					"port": "3001",
 					"path": [
 						"hackentries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newVotes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUxMTc4OTkyLCJleHAiOjE2NTM3NzA5OTJ9.NkkuZFyMOhR4yTHvSI-O2yp_hpsbud1esQo-FSnL6Mw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vote\": true\n   \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/hackentries/1/votes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hackentries",
+						"1",
+						"votes"
 					]
 				}
 			},
@@ -277,6 +204,40 @@
 					"port": "3000",
 					"path": [
 						"changeHack"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changePass",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUxMTczMjA1LCJleHAiOjE2NTM3NjUyMDV9.SAGtIWgKZmpMCtzLGirm2LcGt41OHk8WTtevVtRRLdw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"DSFDgvhljñ\",\n    \"email\": \"mig@hatemale.com\",\n     \"password\":  \"\" \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/changePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"changePassword"
 					]
 				}
 			},
