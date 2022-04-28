@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4fb5adc4-5ce4-4a5a-a267-de5d7f3ca31c",
+		"_postman_id": "5d4e5794-2294-4aff-8f7e-9c6ebaae2186",
 		"name": "HACKINIONS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -127,6 +127,40 @@
 					"port": "3001",
 					"path": [
 						"hackentries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeHack",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUxMTczMjA1LCJleHAiOjE2NTM3NjUyMDV9.SAGtIWgKZmpMCtzLGirm2LcGt41OHk8WTtevVtRRLdw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"DSFDgvhljñ\",\n    \"email\": \"mig@hatemale.com\"\n   \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/changeHack",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"changeHack"
 					]
 				}
 			},
