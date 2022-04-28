@@ -9,7 +9,7 @@ const newUser = require("./controllers/users/newUser");
 const newVote = require("./controllers/hackentries/votes");
 const authUser = require("./middlewares/auth");
 const newHackEntries = require("./controllers/hackentries/newHackEntries");
-
+const changePassword = require("./controllers/users/changePassword");
 //const Joi = require("@hapi/joi");
 //para ver ficheros
 //const fileupload = require("express-fileupload");
@@ -54,8 +54,12 @@ app.post("/hackEntries", authUser, newHackEntries);
 
 // app.post("/hackentries/:idEntry/votes", authUser, newVote);
 app.post("/hackentries/:idEntry/votes", authUser, newVote);
-//middleware de los errores
 
+// changepass
+
+app.put("/users/changePassword", authUser, changePassword);
+
+//middleware de los errores
 app.use((error, req, res, next) => {
   res.status(error.httpStatus || 500).send({
     status: "error",

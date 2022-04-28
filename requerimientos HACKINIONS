@@ -87,7 +87,7 @@ Tabla de votos de artículos          listo
 -- Retorna: mensaje que indica si el usuario se ha modificado correctamente
 
 
-- PUT /users/:idUser/password
+- PUT /users/password
 -- Editar la contraseña de un usuario
 -- Autenticación: sí
 -- Path params:
