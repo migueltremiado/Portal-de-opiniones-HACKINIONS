@@ -57,7 +57,7 @@ app.post("/hackentries/:idEntry/votes", authUser, newVote);
 
 // changepass
 
-app.put("/users/changePassword", authUser, changePassword);
+app.put("/changePassword", authUser, changePassword);
 
 //middleware de los errores
 app.use((error, req, res, next) => {

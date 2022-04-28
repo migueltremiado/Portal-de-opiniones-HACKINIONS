@@ -1,22 +1,32 @@
 const getConnection = require("../../db");
 const { generateError } = require("../../helpers");
+const bcrypt = require("bcrypt");
 
 async function changePassword(req, res, next) {
   let connection;
   try {
+    let id = req.userId;
+
+    let { password } = req.body;
+
+    if (!password) {
+      throw generateError("debes introducir una password", 400);
+    }
+    const passwordHash = await bcrypt.hash(password, 8);
+
     connection = await getConnection();
 
-    const queryResult = await connection.query(
+    await connection.query(
       `
-            SELECT * FROM hackentries 
-            ORDER BY created_at DESC
-            `
+      UPDATE users SET password = ?
+      where id = ?;
+        `,
+      [passwordHash, req.userId]
     );
 
-    const [result] = queryResult;
     res.send({
       status: "ok",
-      message: result,
+      message: "se ha actualizado la contraseña",
     });
   } catch (error) {
     next(error);
