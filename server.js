@@ -10,6 +10,8 @@ const newVote = require("./controllers/hackentries/votes");
 const authUser = require("./middlewares/auth");
 const newHackEntries = require("./controllers/hackentries/newHackEntries");
 const changePassword = require("./controllers/users/changePassword");
+const changeHack = require("./controllers/users/changeHack"); //cambio 27.04 A.R
+
 //const Joi = require("@hapi/joi");
 //para ver ficheros
 //const fileupload = require("express-fileupload");
@@ -49,6 +51,9 @@ app.post("/newUser", newUser);
 
 //newHackEntries con su middleware autUsers
 app.post("/hackEntries", authUser, newHackEntries);
+
+//changeHack con su middleware autUsers(cambio 27.04)
+app.put("/changeHack", authUser, changeHack);
 
 //votos
 
