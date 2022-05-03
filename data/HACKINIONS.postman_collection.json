@@ -188,7 +188,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"DSFDgvhljñ\",\n    \"email\": \"mig@hatemale.com\"\n   \n    \n\n}",
+					"raw": "{\n    \"username\":\"mig\" ,\n        \"email\": \"mig@hatemale.com\"\n   \n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -216,13 +216,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUxMTczMjA1LCJleHAiOjE2NTM3NjUyMDV9.SAGtIWgKZmpMCtzLGirm2LcGt41OHk8WTtevVtRRLdw",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUxNTkwNjE1LCJleHAiOjE2NTQxODI2MTV9.xUoUIx4cDlCWfA_njyq-4G4QoSIww2WJYDAeEePrkus",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"DSFDgvhljñ\",\n    \"email\": \"mig@hatemale.com\",\n     \"password\":  \"\" \n    \n\n}",
+					"raw": "{\n     \"password\":  \"01234\" \n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"

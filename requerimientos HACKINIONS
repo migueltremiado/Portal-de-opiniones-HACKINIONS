@@ -38,10 +38,6 @@ Tabla de votos de artículos          listo
 - GET /hackentries  listo
 -- Obtener un listado de todos los articulos
 -- Autenticación: no
--- Query params:
-    - createdBefore: una fecha para filtrar los artículos creados antes de esa fecha
-    - createdAfter: una fecha para filtrar los articulos creados después de esa fecha
-    - author: filtro de autor de los artículos
 -- Retorna: información de todos los artículos
 
 
@@ -58,11 +54,11 @@ Tabla de votos de artículos          listo
 -- Crear un usuario
 -- Autenticación: no
 -- Body:
-    - userName:obligatorio
+    - username:obligatorio
     - email:obligatorio
     -password:obligatorio
     -name
-    -lastName
+    -lastname
     -bio
 -- Retorna: mensaje que indica si el usuario se ha creado correctamente
 
@@ -75,36 +71,25 @@ Tabla de votos de artículos          listo
     - password: contraseña del usuario
 -- Retorna: un token (JWT - Json Web Token)
 
-- PUT /users/:idUser
+- PUT /changeHack
 -- Editar el nombre y/o el email de un usuario
 -- Autenticación: sí
     - necesitará ser el propio usuario 
--- Path params:
-    - idUser: id del usuario a editar
 -- Body:
     - email
     - username
 -- Retorna: mensaje que indica si el usuario se ha modificado correctamente
 
 
-- PUT /users/password
+- PUT /changePassword
 -- Editar la contraseña de un usuario
 -- Autenticación: sí
--- Path params:
-    - idUser: id del usuario
 -- Body:
-    - oldPassword: contraseña actual
-    - newPassword: contraseña nueva
+    -password: contraseña nueva
 -- Retorna: mensaje que indica que la contraseña se ha modificado correctamente
 
 
-
-
-
-OPCIONAL        in process
-
-
-- POST /hackentries/:idEntry/votes
+- POST /hackentries/votes
 -- Votar un artículo
 -- Autenticación: sí
 -- Path params:
