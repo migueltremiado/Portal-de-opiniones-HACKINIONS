@@ -18,10 +18,14 @@ npm install prompt-sync: Interactuar con la consola.
 
 npm install express multer nime-type: Configuracion del servidor express.
 
-npm install minimist: Ordenar como un arrays.
-
-npm install path: Mejar las rutas
-
 npm install nodemon: Monitorea los cambios en el código y resetea el servidor.
 
 sudo snap install postman: Para las API
+
+npm install morgan
+
+npm install mysql2
+
+npm install bcrypt
+
+npm install jsonwebtoken

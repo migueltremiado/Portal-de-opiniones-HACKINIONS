@@ -12,7 +12,7 @@ async function userLogin(req, res, next) {
       throw generateError("debes introducir un email y contraseña", 400);
     }
 
-    //recojo los datos de la database del usuario con ese email
+    //Recojemos los datos de la database del usuario con ese email
     connection = await getConnection();
 
     const queryResult = await connection.query(

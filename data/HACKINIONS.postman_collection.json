@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4fb5adc4-5ce4-4a5a-a267-de5d7f3ca31c",
+		"_postman_id": "5d4e5794-2294-4aff-8f7e-9c6ebaae2186",
 		"name": "HACKINIONS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,13 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/as",
+					"raw": "localhost:3000/",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"as"
+						""
 					]
 				}
 			},
@@ -46,10 +46,17 @@
 			"name": "userLogin",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwOTA5NTU3LCJleHAiOjE2NTM1MDE1NTd9.FV2FksU4JNBL8uAaDNwADVrg38AQea4tv7zmWhHUd5A",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"alonso@google.com\",\n    \"password\": \"123\"\n}",
+					"raw": "{\n    \"email\": \"amilcar@hatemale.com\",\n    \"password\": \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -77,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"alonso@google.com\",\n    \"password\": \"123\",\n    \"username\": \"mig\",\n    \"name\": \"miguel\",\n    \"lastname\":\"alonso\"\n    \n\n}",
+					"raw": "{\n    \"email\": \"amilcar@hatemale.com\",\n    \"password\": \"123\",\n    \"username\": \"amilca\",\n    \"name\": \"amilcar\",\n    \"lastname\":\"ruiz\"\n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -111,7 +118,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"DSFDgvhljñnm,bmvjgvhjhkjn,bmgjhjlkmn,mb vbhgjklmnbvfghhjc,hjhkjvcmgv,hjhkjj.khcjgkgjb\",\n    \"content\": \"vfaetaryesurdikjfhyrtseryfyhijbvcjfghkjbhjbjjjgggghsdgrgrgvggvtvragargarcgargargrcargrgragracegrhdhfddj\"\n   \n    \n\n}",
+					"raw": "{\n    \"title\": \"DSFDgvhljñnm\",\n    \"content\": \"vfaetaryesurdikjfhyrtseryfyhijbvcjfghkjbhjbjjjgggghsdgrgrgvggvtvragargarcgargargrcargrgragracegrhdhfddj\"\n   \n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -127,6 +134,110 @@
 					"port": "3001",
 					"path": [
 						"hackentries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newVotes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUxMTc4OTkyLCJleHAiOjE2NTM3NzA5OTJ9.NkkuZFyMOhR4yTHvSI-O2yp_hpsbud1esQo-FSnL6Mw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vote\": true\n   \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/hackentries/1/votes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hackentries",
+						"1",
+						"votes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeHack",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUxMTczMjA1LCJleHAiOjE2NTM3NjUyMDV9.SAGtIWgKZmpMCtzLGirm2LcGt41OHk8WTtevVtRRLdw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"mig\" ,\n        \"email\": \"mig@hatemale.com\"\n   \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/changeHack",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"changeHack"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changePass",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUxNTkwNjE1LCJleHAiOjE2NTQxODI2MTV9.xUoUIx4cDlCWfA_njyq-4G4QoSIww2WJYDAeEePrkus",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"password\":  \"01234\" \n    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/changePassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"changePassword"
 					]
 				}
 			},
