@@ -43,17 +43,35 @@
 			"response": []
 		},
 		{
-			"name": "userLogin",
+			"name": "userInfo",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwOTA5NTU3LCJleHAiOjE2NTM1MDE1NTd9.FV2FksU4JNBL8uAaDNwADVrg38AQea4tv7zmWhHUd5A",
-						"type": "text",
-						"disabled": true
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUxMTc4OTkyLCJleHAiOjE2NTM3NzA5OTJ9.NkkuZFyMOhR4yTHvSI-O2yp_hpsbud1esQo-FSnL6Mw",
+						"type": "default"
 					}
 				],
+				"url": {
+					"raw": "http://localhost:4000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"email\": \"amilcar@hatemale.com\",\n    \"password\": \"123\"\n}",
@@ -64,12 +82,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/login",
+					"raw": "http://localhost:4000/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "4000",
 					"path": [
 						"login"
 					]
@@ -84,7 +102,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"amilcar@hatemale.com\",\n    \"password\": \"123\",\n    \"username\": \"amilca\",\n    \"name\": \"amilcar\",\n    \"lastname\":\"ruiz\"\n    \n\n}",
+					"raw": "{\n    \"email\": \"mi@hatemale.com\",\n    \"password\": \"123\",\n    \"username\": \"migp\",\n    \"name\": \"mig\",\n    \"lastname\":\"al\"\n    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,12 +110,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/newUser",
+					"raw": "http://localhost:4000/newUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "4000",
 					"path": [
 						"newUser"
 					]
