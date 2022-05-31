@@ -1,16 +1,18 @@
-require("dotenv").config();
+require('dotenv').config();
 
 //declararamos express
-const express = require("express");
-const morgan = require("morgan");
-const listEntries = require("./controllers/hackentries/listEntries");
-const userLogin = require("./controllers/users/userLogin");
-const newUser = require("./controllers/users/newUser");
-const newVote = require("./controllers/hackentries/votes");
-const authUser = require("./middlewares/auth");
-const newHackEntries = require("./controllers/hackentries/newHackEntries");
-const changePassword = require("./controllers/users/changePassword");
-const changeHack = require("./controllers/users/changeHack"); //cambio 27.04 A.R
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const listEntries = require('./controllers/hackentries/listEntries');
+const userLogin = require('./controllers/users/userLogin');
+const newUser = require('./controllers/users/newUser');
+const newVote = require('./controllers/hackentries/votes');
+const authUser = require('./middlewares/auth');
+const newHackEntries = require('./controllers/hackentries/newHackEntries');
+const changePassword = require('./controllers/users/changePassword');
+const changeHack = require('./controllers/users/changeHack'); //cambio 27.04 A.R
+const getUser = require('./controllers/users/getUser');
 
 //const Joi = require("@hapi/joi");
 //para ver ficheros
@@ -21,53 +23,58 @@ const app = express();
 
 const port = process.env.PORT;
 
-app.use(morgan("dev"));
+app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors());
 
 //Requerimos a user para hacer un get
-const listUsers = "./controllers/listUsers.js";
+const listUsers = './controllers/listUsers.js';
 
 //endpoint home
 //la que hacemos por defecto
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
   res.status(200).send({
-    status: "ok",
-    message: "Bienvenido a Hackinions!!!",
+    status: 'ok',
+    message: 'Bienvenido a Hackinions!!!',
   });
 });
 
 //endPoint entries
 
-app.get("/hackentries", listEntries);
+app.get('/hackentries', listEntries);
 
 //login
 
-app.post("/login", userLogin);
+app.post('/login', userLogin);
 
 //new user
 
-app.post("/newUser", newUser);
+app.post('/newUser', newUser);
+
+//get userinfo
+
+app.get('/user', authUser, getUser);
 
 //newHackEntries con su middleware autUsers
-app.post("/hackEntries", authUser, newHackEntries);
+app.post('/hackEntries', authUser, newHackEntries);
 
 //changeHack con su middleware autUsers(cambio 27.04)
-app.put("/changeHack", authUser, changeHack);
+app.put('/changeHack', authUser, changeHack);
 
 //votos
 
 // app.post("/hackentries/:idEntry/votes", authUser, newVote);
-app.post("/hackentries/:idEntry/votes", authUser, newVote);
+app.post('/hackentries/:idEntry/votes', authUser, newVote);
 
 // changepass
 
-app.put("/changePassword", authUser, changePassword);
+app.put('/changePassword', authUser, changePassword);
 
 //middleware de los errores
 app.use((error, req, res, next) => {
   res.status(error.httpStatus || 500).send({
-    status: "error",
+    status: 'error',
     message: error.message,
   });
 });
@@ -76,8 +83,8 @@ app.use((error, req, res, next) => {
 
 app.use((req, res) => {
   res.status(404).send({
-    status: "ko",
-    message: "Not found",
+    status: 'ko',
+    message: 'Not found',
   });
 });
 //app.use(express.json());
