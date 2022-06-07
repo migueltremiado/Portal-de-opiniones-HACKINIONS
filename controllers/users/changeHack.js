@@ -1,5 +1,5 @@
-const getConnection = require("../../db");
-const { generateError } = require("../../helpers");
+const getConnection = require('../../db');
+const { generateError } = require('../../helpers');
 
 async function changeHack(req, res, next) {
   let connection;
@@ -8,25 +8,25 @@ async function changeHack(req, res, next) {
     //Creamos una variable para utilizar req
     let id = req.userId;
     //Hacemos un destructuring para llamar a lo que vamos a invocar lo que queremos modificar
-    let { username, email } = req.body;
+    let { username, email, name, last_name, bio } = req.body;
 
     if (!email || !username) {
-      throw generateError("debes introducir un email y nombre se usuario", 400);
+      throw generateError('debes introducir un email y nombre se usuario', 400);
     }
 
     connection = await getConnection();
 
     await connection.query(
       `
-          UPDATE users SET username = ?, email = ?
+          UPDATE users SET username = ?, email = ?, name = ?, last_name = ?,bio = ?
           where id = ?;
             `,
       //Modificamos la tabla req.userId
-      [username, email, req.userId]
+      [username, email, name, last_name, bio, req.userId]
     );
     res.send({
-      status: "ok",
-      message: "Se ha cambiado el username y el email",
+      status: 'ok',
+      message: 'Se han cambiado tus datos de usuario',
     });
   } catch (error) {
     next(error);
