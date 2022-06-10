@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(cors());
 
 //Requerimos a user para hacer un get
-const listUsers = './controllers/listUsers.js';
+// const listUsers = './controllers/listUsers.js';
 
 //endpoint home
 //la que hacemos por defecto
