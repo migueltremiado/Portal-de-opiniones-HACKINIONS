@@ -1,15 +1,14 @@
 const getConnection = require('../../db');
 const { generateError } = require('../../helpers');
 
-async function newVote(req, res, next) {
+async function deleteHack(req, res, next) {
   let connection;
-  try {
-    const { vote } = req.body;
+  const { idEntry } = req.params;
+  console.log(idEntry);
 
-    if (vote === undefined) {
-      throw generateError('No se está recibiendo el voto', 400);
-    }
+  try {
     const { idEntry } = req.params;
+    console.log(idEntry);
     if (!idEntry) {
       throw generateError(
         'No se ha localizado el identificador del comentario',
@@ -20,43 +19,17 @@ async function newVote(req, res, next) {
     connection = await getConnection();
     const queryResult = await connection.query(
       `
-              SELECT id
-              FROM hackentries
+              UPDATE hackentries SET estatus = 0
               WHERE id=?
           `,
       [idEntry]
     );
 
     const [result] = queryResult;
-
+    console.log(result);
     if (result.length === 0) {
       throw generateError('no hay ningun comentario con ese id', 400);
     }
-
-    const existVote = await connection.query(
-      `
-                SELECT id
-                FROM hackvotes
-                WHERE hackentries_id=? AND user_id=?
-            `,
-      [idEntry, req.userId]
-    );
-    const [resultVote] = existVote;
-
-    if (resultVote.length > 0) {
-      throw generateError(
-        `el usuario ${req.userId} ya ha votado al comentario ${idEntry}`,
-        409
-      );
-    }
-
-    await connection.query(
-      `
-        INSERT INTO hackvotes(vote, user_id, hackentries_id)
-        VALUES(?, ?, ?);
-          `,
-      [vote, req.userId, idEntry]
-    );
 
     res.send({
       status: 'ok',
@@ -71,4 +44,4 @@ async function newVote(req, res, next) {
   }
 }
 
-module.exports = newVote;
+module.exports = deleteHack;

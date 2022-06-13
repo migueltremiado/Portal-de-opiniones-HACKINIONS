@@ -1,5 +1,5 @@
 const getConnection = require('../../db');
-// const { generateError } = require('../../helpers');
+//const { generateError } = require('../../helpers');
 
 async function listEntries(req, res, next) {
   let connection;
@@ -13,10 +13,10 @@ async function listEntries(req, res, next) {
       //esta funcion nos permite hacer la peticion de sql
       //devuelve toda la informacion de la tabla hackentries
       `
-      SELECT hackentries.id as hackId , title,content, users.id as userId, 
-      users.name, hackentries.created_at FROM hackentries inner join users on users.id = hackentries.user_id
+      SELECT hackentries.id as hackId , title,content, users.id as userId, users.name, hackentries.created_at FROM hackentries inner join users on users.id = hackentries.user_id
+      WHERE  estatus =1
       ORDER BY hackentries.created_at DESC
-            `
+`
     );
     //lo guarda en result
     const [result] = queryResult;

@@ -19,6 +19,7 @@ CREATE TABLE hackentries(
     content VARCHAR(250) NOT NULL,
     user_id INT UNSIGNED NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estatus BOOLEAN DEFAULT 1,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -36,7 +37,7 @@ CREATE TABLE hackvotes(
 
 
 
-INSEhackentriesRT INTO hackentries(title, content, user_id)
+INSERT  INTO hackentries(title, content, user_id)
 	VALUES
     ("precio del gas","El precio del gas esta carísimo, bla bla",1),
     ("educación infantil", "Los padres de hoy dejan a los niños bla bla",2);

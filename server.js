@@ -13,6 +13,7 @@ const newHackEntries = require('./controllers/hackentries/newHackEntries');
 const changePassword = require('./controllers/users/changePassword');
 const changeHack = require('./controllers/users/changeHack'); //cambio 27.04 A.R
 const getUser = require('./controllers/users/getUser');
+const deleteHack = require('./controllers/hackentries/deleteHack');
 
 //const Joi = require("@hapi/joi");
 //para ver ficheros
@@ -70,6 +71,9 @@ app.post('/hackentries/:idEntry/votes', authUser, newVote);
 // changepass
 
 app.put('/changePassword', authUser, changePassword);
+
+//declaramos delete
+app.put('/hackentries/:idEntry', authUser, deleteHack);
 
 //middleware de los errores
 app.use((error, req, res, next) => {
