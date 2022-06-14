@@ -21,17 +21,18 @@ async function newHackEntries(req, res, next) {
 
     connection = await getConnection();
 
-    await connection.query(
+    const response = await connection.query(
       `
         INSERT INTO hackentries(title, content, user_id)
         VALUES(?, ?, ?);
           `,
       [title, content, userId]
     );
-
+    console.log(response[0].insertId);
     res.send({
       status: 'ok',
       message: 'Creada nueva Hackentries',
+      lastId: response[0].insertId,
     });
   } catch (error) {
     next(error);
